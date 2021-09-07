@@ -13,6 +13,6 @@ public class PlayerManager : MonoBehaviour
     public List<GameObject> collectStick; //degdigimiz ogerleri bir arada tutmak için gameobject listesi ekledik. Bu liste sayesinde toplanan tüm objelere istediðimiz zaman eriþebileceðiz
     public enum PlayerState
     {
-        stop,move
+        stop,move,first,other
     }
 }

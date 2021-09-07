@@ -34,16 +34,16 @@ public class CollectedObjectController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        if (collision.gameObject.CompareTag("collectable")){
+        if (collision.gameObject.CompareTag("collectable")){ //eðer öðe toplanabilir durumdaysa kodlara giriþ yap demiþ olduk
             
-            if (playerManager.collectStick.Contains(collision.gameObject)) //eðer listede eleman yoksa
+            if (playerManager.collectStick.Contains(collision.gameObject)) //eðer listede eleman varsa dedik bunu deme sebebimiz oyun baþýnda listemizde eleman var
             {
                 Debug.Log("Buraya girdi");
-                collision.gameObject.tag = "CollectedObj";
-                collision.transform.parent = playerManager.collectedPoolTransform;
+                collision.gameObject.tag = "CollectedObj"; //çarpan öðenin tag'ini collectable iken CollectedObj olarak ayarla dedik
+                collision.transform.parent = playerManager.collectedPoolTransform; //Bu kod collectedPoolTransform'un referans verdiði gameObject'i temas eden yani collision'a deðen ögenin ebeveyn'i yapar
 
-                playerManager.collectStick.Add(collision.gameObject);
-                collision.gameObject.AddComponent<CollectedObjectController>();
+                playerManager.collectStick.Add(collision.gameObject); //çarpan öðeyi listeye ekle dedik
+                collision.gameObject.AddComponent<CollectedObjectController>(); //çarpan öðelere de CollectedObjectController scriptini ekle dedik. Buda aslýnda sonradan hiyerarþiye dahil olan elemanýnda çarptýðý öðeye yukarýdaki özelliklerin dahil olmasýný yani toplama iþlemini gerçekleþtirebilmesini saðliyor
             }
         }
     }
