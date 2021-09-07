@@ -10,6 +10,10 @@ public class Movement : MonoBehaviour
     [SerializeField] float controlSpeed;
 
     [SerializeField] bool isTouching;
+    [Range(8,11)]
+    [SerializeField] float distanceBetweenSides;
+
+
 
 
     float touchPosX;
@@ -27,9 +31,17 @@ public class Movement : MonoBehaviour
             //transform.position += Vector3.forward * Time.deltaTime * movementSpeed;
             transform.Translate(transform.forward*movementSpeed*Time.deltaTime);  
         }
-        if (isTouching)
+        if (isTouching && transform.position.x > -distanceBetweenSides && transform.position.x< distanceBetweenSides)
         {
             touchPosX += Input.GetAxis("Mouse X") * controlSpeed * Time.fixedDeltaTime;
+        }
+        else if (transform.position.x < -distanceBetweenSides)
+        {
+            touchPosX += 0.2f;
+        }
+        else if(transform.position.x > distanceBetweenSides)
+        {
+            touchPosX -= 0.2f;
         }
 
         transform.position = new Vector3(touchPosX, transform.position.y, transform.position.z); // yukarýdan gelen x deðerini aldýk

@@ -7035,7 +7035,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516355815}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0dccc54f45bc78f458ad6087d592b169, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -24859,7 +24859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884442334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.597797, y: 543.2876, z: -350.23218}
+  m_LocalPosition: {x: 58.1, y: 543.2876, z: -350.23218}
   m_LocalScale: {x: 1, y: 2.5937, z: 226.82019}
   m_Children: []
   m_Father: {fileID: 278471799}
@@ -24872,7 +24872,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884442334}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0dccc54f45bc78f458ad6087d592b169, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -26312,6 +26312,7 @@ MonoBehaviour:
   movementSpeed: 10
   controlSpeed: 47
   isTouching: 0
+  distanceBetweenSides: 8.74
 --- !u!54 &1988831997
 Rigidbody:
   m_ObjectHideFlags: 0
