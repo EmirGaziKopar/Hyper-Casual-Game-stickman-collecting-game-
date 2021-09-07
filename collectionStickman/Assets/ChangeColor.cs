@@ -29,7 +29,7 @@ public class ChangeColor : MonoBehaviour
         if (collision.gameObject.CompareTag("CollectedObj"))
         {
             Debug.Log("Buraya girmedi");
-            m_Material.color = Color.white;
+            m_Material.color = Color.Lerp(new Color32(0,255,2,255), new Color32(0,255,255,255), Time.time); //Time.time kullanmadan önce ortaya tuhaf parlak renkler çýkýyordu
           
         }
        

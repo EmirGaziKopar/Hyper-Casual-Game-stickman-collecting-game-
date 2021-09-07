@@ -11,6 +11,12 @@ public class FallowMovement : MonoBehaviour
 
     public float hiz = 10f;
 
+
+    float x;
+    float y;
+    float z;
+
+
     [SerializeField] Vector3 distance;
 
     // Start is called before the first frame update
@@ -25,6 +31,10 @@ public class FallowMovement : MonoBehaviour
     private void FixedUpdate()
     {
         camera.position = Vector3.Lerp(camera.position, stickman.position - distance, .05f); //(hangi posizyondan baþlayacak , hangi pozisyona gidecek , yumuþaklýk deðeri)
+        //camera.LookAt(stickman, Vector3.back); kullanýlabilir
         camera.LookAt(stickman);
+        
+        //transform.position = Vector3.MoveTowards(transform.position, stickman.position - distance, Time.deltaTime * hiz);
+
     }
 }
